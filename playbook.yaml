@@ -138,4 +138,3 @@
     - name: Update database with some correct values
       command: sqlite3 {{ ovpn_src}}/db/data.db "UPDATE o_v_client_config SET server_address = '{{ ansible_host_ip }}', port = 443, open_vpn_server_port = 443, o_v_client_group = 'nobody' WHERE profile = 'default';"
       when: db_check.stdout != "0"
-
